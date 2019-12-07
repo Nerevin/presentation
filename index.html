@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>HTML 5<br>&ltCanvas&gt</h2>
+					<p>Ilia Kazakov</p>
+				</section>
+				<section>
+					<h2>History</h2>
+					<p class="fragment">Canvas was initially introduced by Apple in 2004</p>
+					<img src="assets/apple.png" alt="apple" width = "300px" height = "100px" class="fragment">
+					<img src="assets/safari.png" alt="safari" width = "100px" height = "100px" class="fragment">
+					<p class="fragment">Living standard</p>
+					<img src="assets/w3c.jpg" alt="w3c" class="fragment">
+				</section>
+				<section>
+					<h2>Canvas compatibility</h2>
+					<img src="assets/table.png" alt="table">
+				</section>
+				<section>
+					<h2>How it works</h2>
+					<code class="fragment">
+						&ltcanvas id='canvas' width='300' height='200'&gtYou will see this message if your browser does not support canvas.&lt/canvas&gt
+					</code><br>
+					<code class="fragment">
+						const canvas = document.getElementById('canvas');
+						const ctx = canvas.getContext('2d');
+					</code>
+				</section>
+				<section>
+					<img src="assets/context.png" alt="context">
+				</section>
+				<section>
+					<img src="assets/coord.png" alt="coord">
+				</section>
+				<section>
+					<code>
+						ctx.moveTo(10,10);
+						ctx.lineTo(100,40);
+						ctx.stroke();							
+					</code><br>
+					<canvas id="canvas" class="fragment"></canvas>
+					<script class="fragment">
+						const canvas = document.getElementById('canvas');
+						const ctx = canvas.getContext('2d');
+						ctx.moveTo(10,10);
+						ctx.lineTo(300,200);
+						ctx.stroke();	
+					</script>
+				</section>
+				<section>
+					<canvas id="canvas1" class="fragment"></canvas>
+					<script>
+						const canvas1 = document.getElementById('canvas1');
+						const ctx1 = canvas1.getContext('2d');
+						ctx1.fillStyle = "rgb(65, 60, 50)"; 
+						ctx1.fillRect(25, 50, 100, 100); 
+						ctx1.strokeStyle = "rgb(65, 60, 50)";
+						ctx1.strokeRect(10, 10, 40, 70);
+					</script>
+				</section>
+				<section>
+					<img src="assets/img.png" alt="img" class="fragment" height="250px"><br>
+					<img src="assets/pixel.png" alt="pixel" class="fragment" height="250px">
+				</section>
+				<section>
+					<canvas id="canvas2" class="fragment"></canvas>
+					<script>
+						const canvas2 = document.getElementById('canvas2');
+						const ctx2 = canvas2.getContext('2d');
+						ctx2.font = 'bold 1em "PT Sans", sans-serif'; 
+						ctx2.fillStyle = 'rgba(0, 0, 0, 0.5)'; 
+						ctx2.textAlign = 'center'; 
+						ctx2.textBaseline = 'top'; 
+						ctx2.fillText('Hi, i\’m canvas', 80, 50);
+					</script>
+				</section>
+				<section>
+					<iframe src="https://codepen.io/jackrugile/full/fxqKJ" width="500px" height="500px"></iframe>
+				</section>
+				<section>
+					<h2>Thank you for your attention</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
